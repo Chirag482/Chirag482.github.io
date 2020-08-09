@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamCooks</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+   <style>
+     .img-card:hover{
+      opacity: .6;
+     }
+     #nav {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      height: auto;
+      width: 100%;
+      font-weight: bold;
+  }
+  #nav a{
+      color: white;
+  }
+  #nav a:hover{
+      color:red;
+      background-color: rgba(41, 40, 40, .29);
+  }
+  #nav .navbar{
+      min-height: 8vh;
+      background-color: rgba(31, 30, 30, .24);
+      
+  }
+  .dropdown-menu{
+      background-color: rgba(31, 30, 30, .24);
+  }
+     #home{
+       position: relative;
+     }
+
+
+     .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      float:right;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      margin:auto; /* Location of the box */
+      left: 0;
+      top: 0;
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 60%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.8s
+    }
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+    .modal-header {
+      margin-left:0px;
+      background-image: url("src/Gold.jpg");
+      color: white;
+      float:left;
+      text-shadow:4px 4px grey;
+    }
+    
+    .modal-body {
+    background-color:lightyellow;
+    font-size:20px;
+    font-style:italic;
+    color:grey;
+    padding: 2px 16px;
+    }
+    
+    .modal-footer {
+      padding: 2px 16px;
+      background-image: url("src/Gold.jpg");
+      color: white;
+    }
+            
+          </style>
+   
+
+
+</head>
+<body style="background-color: azure;">
+    <!--header section (nav)-->
+  <section id="nav" style="z-index: 1;">
+    <nav class="navbar navbar-expand-lg navbar-primary wrap-menu-header gradient1  trans-0-4">
+      <a class="navbar-brand" href="index.html">
+          <img src="src/header.jpg" alt="header_image" width="155px" height="55px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="margin: 15px;margin-top:0px"><img src="https://img.icons8.com/cotton/64/000000/menu.png" style="height: 50px;"/></span>
+
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto smooth-scroll list-unstyled">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html #home">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html #about">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="indian.html">Indian Cuisine</a>
+              <a class="dropdown-item" href="japanese.html">Japaneese Cuisine</a>
+              <!-- <div class="dropdown-divider"></div> -->
+              <hr style="margin:2px">
+              <a class="dropdown-item" href="index.html #menu">Explore More</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html #reservation">Reservation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html #contact">Contact</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a href="https://www.google.com/maps/place/Chitkara+University/@30.5160865,76.6575891,17z/data=!3m1!4b1!4m5!3m4!1s0x390fc32344a6e2d7:0x81b346dee91799ca!8m2!3d30.5160865!4d76.6597778" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/address.png" style="margin-right: 10px;"/>
+          </a>
+          <a href="mailto: chirag0634.cse19@chitkara.edu.in" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/important-mail.png"/>
+          </a>
+          <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        </form>
+      </div>
+    </nav>
+  </section>
+
+
+      <!-- CROUSEL -->
+
+      <section id="home" style="z-index: 0;">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <!--Slide 1-->
+            <div class="carousel-item active" >
+              <!-- jUMBOTRON -->
+              <div class="jumbotron" style="background-image: url(src/indian_cuisine.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+                <div class="d-block w-100" style="min-height: 300px;">
+                  <div class="offset-3  container ">
+                    <h1 class="display-2" style="font-style: italic;font-weight:400;">Indian Cuisine</h1>
+                    <p class="lead">Some famous Indian Cuisine</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="indian.html" role="button">Explore more</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <!--Slide 2-->
+            <div class="carousel-item" >
+              <!-- jUMBOTRON -->
+              <div class="jumbotron" style="background-image: url(src/italian_cuisine.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+                <div class="d-block w-100" style="min-height: 300px;">
+                  <div class="offset-3  container ">
+                    <h1 class="display-2" style="font-style: italic;font-weight:400;">Italian Cuisine</h1>
+                    <p class="lead">Some famous Indian Cuisine</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="italian.html" role="button">Explore more</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Slide 3-->
+            <div class="carousel-item" >
+              <!-- jUMBOTRON -->
+              <div class="jumbotron" style="background-image: url(src/chinese_cuisine.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+                <div class="d-block w-100" style="min-height: 300px;">
+                  <div class="offset-3  container ">
+                    <h1 class="display-2" style="font-style: italic;font-weight:400;">Chinese Cuisine</h1>
+                    <p class="lead">Some famous Chinese Cuisine</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="chinese.html" role="button">Explore more</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Slide 4-->
+            <div class="carousel-item" >
+              <!-- jUMBOTRON -->
+              <div class="jumbotron" style="background-image: url(src/japanese_cuisine.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+                <div class="d-block w-100" style="min-height: 300px;">
+                  <div class="offset-3  container ">
+                    <h1 class="display-2" style="font-style: italic;font-weight:400;">Japanese Cuisine</h1>
+                    <p class="lead">Some famous Japanese Cuisine</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="japanese.html" role="button">Explore more</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section>
+
+
+    <!--About Us-->
+    <section id="about">
+      <div class="container">
+        <div class="card about-me mb-4">
+          <div class="card-header t-center" style="border: none;">
+              <img src="discover.png" alt="img" style="height: 110px; width:100%;" >
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="card" style="border: none;background-color: cornsilk;">                    
+              <figure>
+                <img class="card-img-top" src="src/japanese_cuisine.jpg" alt="My Image" height="80%" width="80%">
+              </figure>
+            </div> 
+          </div>
+          
+          <div class="col-md-6 col-sm-12  skills-column" >
+            <div class="card mb-4" style="border: none;background-color: cornsilk;">
+              <div class="card-body">
+                <p class="card-text" style="height: 310px;text-align:center;padding-top:50px">
+                  <i>We all welcome you to 'Dream Food'. It is setup by our team in 2020. Its a new journey to a buisness work which provides
+                    all our customers delicious food made with love, care and perfection. Believe if you taste once you will become fan of
+                    the taste, quality and service. As all know that nothing is easy and quick nut its our team's hardwork which enables
+                    to set up a brand new <b>quality buisness</b>.
+                  </i>
+                </p>        
+              </div>
+            </div> 
+          </div>
+          
+        </div><!--row ends here-->
+        
+      </div><!--contiaer ends here-->
+    </section><!--about ends here-->
+
+    
+    <section id="menu">
+      <div style="margin-top:60px;background-color:grey;">
+        <center><h1 style="color:red;text-shadow:5px 0px;background-color:green;padding:5px;">Menu</h1></center>
+        <div class="row row-cols-1 row-cols-md-3 container mt-4" style="margin:auto;background-color:green;">
+          <div class="col mb-4">
+            <div class="card">
+              <img src="src/indianfood.png" class="card-img-top img-card" alt="Indian food" height="250px" width="300p"x>
+              <div class="card-body">
+              <a href="indian.html" style="text-decoration: none;color:black;font-weight:bold">  <h3 class="card-title">Indian</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">Indian cuisine consists of a variety of regional and traditional cuisines native to the Indian subcontinent.
+            Given the diversity in soil, climate, culture, ethnic groups, and occupations,these cuisines vary substantially 
+            and use locally available spices, herbs, vegetables, and fruits.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card scrollar">
+             <img src="src/japanesefood.png" class="card-img-top img-card" alt="Japanese food" height="250px" width="300px">
+              <div class="card-body">
+               <a href="japanese.html" style="text-decoration: none;color:black;font-weight:bold"> <h3 class="card-title">Japanese</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">Japaneese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political,
+            economic, and social changes.The traditional cuisine of Japan, washoku (和食), lit. "Japanese eating" (or kappō (ja:割烹)),
+         is based on rice with miso soup and other dishes; there is an emphasis on seasonal ingredients.
+         Side dishes often consist of fish, pickled vegetables, and vegetables cooked in broth</p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+            <img src="src/chinesefood.png" class="card-img-top img-card" alt="Chinese food" height="250px" width="300px">
+              <div class="card-body">
+               <a href="chinese.html" style="text-decoration: none;color:black;font-weight:bold"> <h3 class="card-title">Chinese</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">Chinese cuisine is an important part of Chinese culture, which includes cuisine originating from the diverse regions
+            of China, as well as from Overseas Chinese who have settled in other parts of the world. Because of the Chinese diaspora and historical power of the country,
+            Chinese cuisine has influenced many other cuisines in Asia, with modifications made to cater to local palates.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+            <img src="src/italianfood.png" class="card-img-top img-card" alt="Italian food" height="250px" width="300px">
+              <div class="card-body">
+            <a href="italian.html" style="text-decoration: none;color:black;font-weight:bold">    <h3 class="card-title">Italian</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">Italian cuisine is a Mediterranean cuisine
+            consisting of the ingredients, recipes and cooking techniques developed across the Italian
+            Peninsula since the antiquity, and later spread around the world together with waves of Italian diaspora.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+            <img src="src/mexicanfood.png" class="card-img-top img-card" alt="Mexican food" height="250px" width="300px">
+              <div class="card-body">
+            <a href="mexican.html" style="text-decoration: none;color:black;font-weight:bold">    <h3 class="card-title">Mexican</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">Mexican cuisine began about 9,000 years ago, when agricultural
+            communities such as the Maya formed, domesticating maize,
+            creating the standard process of maize nixtamalization, and establishing their foodways. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4">
+            <div class="card">
+            <img src="src/americanfood.png" class="card-img-top img-card" alt="American food" height="250px" width="300px">
+              <div class="card-body">
+            <a href="american.html" style="text-decoration: none;color:black;font-weight:bold">    <h3 class="card-title">American</h3></a>
+                <p class="card-text" style="height:200px;overflow:hidden scroll;">American cuisine reflects the history of the United States, blending the culinary contributions of
+            various groups of people from around the world, including indigenous American
+            Indians, African Americans, Asians, Europeans, Pacific Islanders, and Latin Americans. Though much of American
+            cuisine is fusion cuisine reflecting global cuisine, many regional cuisines have deeply rooted ethnic heritages,
+            including Cajun, Louisiana Creole, Native American, New Mexican, Pennsylvania Dutch, Soul food, and Tlingit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+      
+
+      <section id="reservation" style="background-color:gray;" class="mt-5">
+        <div class="card-header container mt-9" style="text-align: center;color:red;font-style:italic ;font-size:50px;background-color:honeydew">
+          Reservation
+        </div>
+        <div class="container reserContainer">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card p-1" style="background-color:honeydew;">
+                <!-- <div class="card-body"> -->
+                  <div class="card-title" style="text-align: center;color:black;font-weight:bold;font-size:30px">
+                    BOOK A TABLE
+                  </div>
+                    <!--Inner cards-->
+                    <div calss="col-sm-6">
+                      <div class="card m-0 abc">
+                        <form style="background-color: lavender;" >
+                          <div class="form-row">
+                            <div class="form-group col-sm-6">
+                              <label for="date">Date:</label>
+                              <input type="date" class="form-control" id="date" name="date" placeholder="01/01/2000" required>
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="time">Time:</label>
+                              <input type="time" class="form-control" id="time" name="time" placeholder="8:00" required onblur="validatetime();">&nbsp;<span id="message4">&nbsp;</span>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-sm-6">
+                              <label for="persons">Persons</label>
+                              <input type="number" class="form-control" id="persons" name="persons" placeholder="1" required onblur="validatetime();">&nbsp;<span id="message5">&nbsp;</span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="Name">Name:</label>
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required onblur="validatename();">&nbsp;<span id="message1">&nbsp;</span>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-sm-6">
+                              <label for="contactNum">Contact No.:</label>
+                              <input type="num" class="form-control" id="contactNum" name="contactNum" placeholder="Enter Your Number" required onblur="validatenumber();">&nbsp;<span id="message2">&nbsp;</span>
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="email">Email:</label>
+                              <input type="email" class="form-control" id="email" name="email" placeholder="abc@xyz.com" onblur="validateemail();">&nbsp;<span id="message3">&nbsp;</span>
+                            </div>
+                          </div>
+                          <div class="card-footer" style="text-align: center;">
+                            <input id="reservationbtn" type="button" value="Book" style="background-color:black;color:white;width:80px;border-radius:10px">
+                          </div>
+                        </form>  
+                      </div>
+                    </div>
+                <!-- </div> -->
+              </div>
+            </div>
+            <!--Image-->
+            <div class="col-sm-6">
+              <div class="card" style="height: 380px;">
+                <img src="src/reserved.webp" style="width: 100%;height:120%">
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+	    <!-- modal-->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Congratulations!</h2>
+            <span class="close">&times;</span><br><br>
+          </div>
+          <div class="modal-body" id="modal-body">
+            <p>Some text in the Modal Body</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="printbook">Print</button>
+          </div>
+        </div>
+      </div>
+	    <!-- end of modal -->  
+
+
+
+
+    <!--Contact Info-->
+    <section id="contact" style="background-color: azure;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+      <!--Section heading-->
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+          a matter of hours to help you.
+      </p>
+      
+        
+            <div class="row">
+              <div class="col-md-6">
+                
+                  <input type="text" placeholder="Enter Your Name" id="name1" name="name" style="width: 320px;margin:15px" required onblur="validatename1();"><br><span id="validname">&nbsp;</span>
+              </div>
+              <div class="col-md-6">
+                <input type="email" placeholder="Enter Your Email" id="email1" name="email" style="width: 320px;margin:15px" id="email3" required onblur="validateemail1();"><br><span id="validemail">&nbsp;</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <input type="text" placeholder="Subject" id="Subject" name="Subject" style="width: 320px;margin:15px">
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6">
+                <input type="text" placeholder="Enter Message" id="Message" name="Message" style="width: 320px;margin:15px">
+              </div>
+            </div>
+            <div class="row" style="text-align:center;justify-content:center">
+              <div class="col-md-9">
+                
+                <button id="awe" style="background-color: cornflowerblue;border-radius:12px;width:100px" onclick="contactbutton()" >Send</button> 
+                <p id="conbutton" style="background-color: black;color:white;font-weight:bold;width:80%"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <img src="src/abc.jpg" alt="" style="height:300px;margin-top:50px">
+            <!-- <a href="https://www.google.com/maps/place/Chitkara+University/@30.5160865,76.6575891,17z/data=!3m1!4b1!4m5!3m4!1s0x390fc32344a6e2d7:0x81b346dee91799ca!8m2!3d30.5160865!4d76.6597778" target="_blank">
+            <div class="iamge"><center>
+              <img src="https://img.icons8.com/fluent/48/000000/address.png"/></center>
+            </div>
+            <div class="image-description" style="text-align: center;color:black">
+              Chitkara University,Punjab
+            </div>
+            </a>
+            <div class="iamge"><center>
+              <img src="https://img.icons8.com/carbon-copy/100/000000/phone.png" width="50px" height="50px"/></center>
+            </div>
+            <div class="image-description" style="text-align: center;color:black">
+              +91 1234567890
+            </div>
+            <a href="mailto: chirag0634.cse19@chitkara.edu.in" target="_blank">
+            <div class="iamge"><center>
+              <img src="https://img.icons8.com/carbon-copy/100/000000/important-mail.png"  width="50px" height="50px"/></center>
+            </div>
+            <div class="image-description" style="text-align: center;color:black">
+              @chirag0634.cse19@chitkara.edu.in
+            </div>
+            </a> -->
+          </div>
+        </div>
+      </div>
+        
+    </section>
+
+
+    <!-- Footer -->
+<footer class="page-footer font-small black">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="background-color: darkgrey;">© 2020 Copyright:
+    <a href="index.html">DreamCooks Catering</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+    <!--Contact Info-->
+
+    <script type="text/javascript" src="index.js">
+      
+    </script>
+</body>
+</html>

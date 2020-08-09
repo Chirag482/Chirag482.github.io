@@ -1,0 +1,234 @@
+/* *{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+} */
+/* html{
+    font-size: 10px;
+    font-family: sans-serif;
+} */
+#image .container{
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+/* image section*/
+#image{
+    background-image: url(src/indian_cuisine.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+#image::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+#image h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color:transparent;
+    animation: text_reveal 1s ease forwards;
+    animation-delay: 1.5s;
+}
+#image h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: crimson;
+    animation: text_reveal_box 1s ease;
+    animation-delay: 1s;
+}
+/*image section ends here*/
+
+/*key frames*/
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color:white;
+    }
+}
+/*key frames ends here*/
+
+
+#nav {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    height: auto;
+    width: 100%;
+    font-weight: bold;
+}
+#nav a{
+    color: white;
+}
+#nav a:hover{
+    color:red;
+    background-color: rgba(41, 40, 40, .29);
+}
+#nav .navbar{
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, .24);
+    
+}
+.dropdown-menu{
+    background-color: rgba(31, 30, 30, .24);
+}
+
+
+
+/*content start here*/
+div.content{
+    /* margin-left: 200px;
+    margin-top: 70px;
+    margin-right: 150px; */
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    padding:15px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background-color: seashell;
+}
+
+
+
+
+.view:hover{
+  opacity: .6;
+}
+
+
+
+
+
+
+
+
+
+#menu{
+    position: relative;
+}
+ul.nav-pills {
+    top: 20px;
+    position: relative;
+  }
+  div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+  #section1 {color: #fff; background-color: #1E88E5;}
+  #section2 {color: #fff; background-color: #673ab7;}
+  #section3 {color: #fff; background-color: #ff9800;}
+  #section41 {color: #fff; background-color: #00bcd4;}
+  #section42 {color: #fff; background-color: #009688;}
+  
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section41, #section42  {
+      margin-left: 150px;
+    }
+  }
+
+
+
+
+
+/*Alert window design*/
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    float:right;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    margin:auto; /* Location of the box */
+    left: 0;
+    top: 0;
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.8s
+  }
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  .modal-header {
+    margin-left:0px;
+    background-image: url("src/Gold.jpg");
+    color: white;
+    float:left;
+    text-shadow:4px 4px grey;
+  }
+  
+  .modal-body {
+  background-color:lightyellow;
+  font-size:20px;
+  font-style:italic;
+  color:grey;
+  padding: 2px 16px;
+  }
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-image: url("src/Gold.jpg");
+    color: white;
+  }
+  
+/*Alet window design ends here*/
